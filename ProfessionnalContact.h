@@ -17,6 +17,8 @@ class ProfessionnalContact : public Contact
         string getCompanyMail() { return companyMail; }
         void setCompanyMail(string val) { companyMail = val; }
 
+        /* virtual */ void informations() override;
+string cN
     protected:
 
     private:
