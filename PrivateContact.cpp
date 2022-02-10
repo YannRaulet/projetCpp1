@@ -1,6 +1,7 @@
 #include "PrivateContact.h"
+#include <QDebug>
 
-PrivateContact::PrivateContact(string lN, string fN, Sex se, Address cAdd, string cBd)
+PrivateContact::PrivateContact(QString lN, QString fN, Sex se, Address cAdd, QString cBd)
     :Contact(lN, fN, se)
 {
     //ctor
@@ -11,6 +12,6 @@ PrivateContact::PrivateContact(string lN, string fN, Sex se, Address cAdd, strin
 PrivateContact::~PrivateContact()
 {
     //dtor
-    cout << "Destruction du contact privé" <<endl;
+    qDebug() << "Destruction du contact privé" <<endl;
 }
 

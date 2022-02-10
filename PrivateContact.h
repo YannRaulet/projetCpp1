@@ -4,24 +4,23 @@
 #include "Address.h"
 #include "Contact.h"
 
-#include <iostream>
+#include <QString>
 
-using namespace std;
 
 class PrivateContact : public Contact
 {
     public:
-        PrivateContact(string, string, Sex, Address, string);
+        PrivateContact(QString, QString, Sex, Address, QString);
         virtual ~PrivateContact();
 
         Address getContactAddress() { return contactAddress; }
         void setContactAddress(Address val) { contactAddress = val; }
-        string getBirthdate() { return birthdate; }
-        void setBirthdate(string val) { birthdate = val; }
+        QString getBirthdate() { return birthdate; }
+        void setBirthdate(QString val) { birthdate = val; }
 
     private:
         Address contactAddress;
-        string birthdate;
+        QString birthdate;
 };
 
 #endif // PRIVATECONTACT_H

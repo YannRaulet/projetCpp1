@@ -1,9 +1,7 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
-#include <iostream>
-
-using namespace std;
+#include <QString>
 
 enum Sex:char {M='M', F='F'};
 
@@ -11,24 +9,24 @@ enum Sex:char {M='M', F='F'};
 class Contact
 {
     public:
-        Contact(string, string, Sex);
+        Contact(QString, QString, Sex);
 
         virtual ~Contact();
 
         int getId() { return id; }
-        string getLastName() { return lastName; }
-        string getFirstName() { return firstName; }
+        QString getLastName() { return lastName; }
+        QString getFirstName() { return firstName; }
         Sex getSex() { return sex; }
         void setSex(Sex vSex) { sex = vSex; }
 
-        void setLastName(string);
-        void setFirstName(string);
+        void setLastName(QString);
+        void setFirstName(QString);
 
     private:
         static int counter;
         int id;
-        string lastName;
-        string firstName;
+        QString lastName;
+        QString firstName;
         Sex sex;
 };
 
