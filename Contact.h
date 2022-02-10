@@ -8,16 +8,13 @@ class Contact
         Contact();
         virtual ~Contact();
 
-        int Getid() { return id; }
-        void Setid(int val) { id = val; }
-        string GetlastName() { return lastName; }
-        void SetlastName(string val) { lastName = val; }
-        string GetfirstName() { return firstName; }
-        void SetfirstName(string val) { firstName = val; }
-        char Getsex() { return sex; }
-        void Setsex(char val) { sex = val; }
-
-    protected:
+        int getId() { return id; }
+        string getLastName() { return lastName; }
+        void setLastName(string val) { lastName = val; }
+        string getFirstName() { return firstName; }
+        void setfirstName(string val) { firstName = val; }
+        char getSex() { return sex; }
+        void setSex(char val) { sex = val; }
 
     private:
         int id;

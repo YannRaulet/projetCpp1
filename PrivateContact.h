@@ -1,19 +1,19 @@
 #ifndef PRIVATECONTACT_H
 #define PRIVATECONTACT_H
 
+#include "Address.h"
+#include "Contact.h"
 
-class PrivateContact
+class PrivateContact : public Contact
 {
     public:
         PrivateContact();
         virtual ~PrivateContact();
 
-        Address GetcontactAddress() { return contactAddress; }
-        void SetcontactAddress(Address val) { contactAddress = val; }
-        string Getbirthdate() { return birthdate; }
-        void Setbirthdate(string val) { birthdate = val; }
-
-    protected:
+        Address getContactAddress() { return contactAddress; }
+        void setContactAddress(Address val) { contactAddress = val; }
+        string getBirthdate() { return birthdate; }
+        void setBirthdate(string val) { birthdate = val; }
 
     private:
         Address contactAddress;

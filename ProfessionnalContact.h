@@ -1,19 +1,21 @@
 #ifndef PROFESSIONNALCONTACT_H
 #define PROFESSIONNALCONTACT_H
 
+#include "Address.h"
+#include "Contact.h"
 
-class ProfessionnalContact
+class ProfessionnalContact : public Contact
 {
     public:
         ProfessionnalContact();
         virtual ~ProfessionnalContact();
 
-        string GetcompanyName() { return companyName; }
-        void SetcompanyName(string val) { companyName = val; }
-        Address GetcompanyAddress() { return companyAddress; }
-        void SetcompanyAddress(Address val) { companyAddress = val; }
-        string GetcompanyMail() { return companyMail; }
-        void SetcompanyMail(string val) { companyMail = val; }
+        string getCompanyName() { return companyName; }
+        void setCompanyName(string val) { companyName = val; }
+        Address getCompanyAddress() { return companyAddress; }
+        void setCompanyAddress(Address val) { companyAddress = val; }
+        string getCompanyMail() { return companyMail; }
+        void setCompanyMail(string val) { companyMail = val; }
 
     protected:
 
