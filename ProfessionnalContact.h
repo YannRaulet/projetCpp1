@@ -11,7 +11,7 @@ using namespace std;
 class ProfessionnalContact : public Contact
 {
     public:
-        ProfessionnalContact(string lN, string fN, Sex se, string cN, Address pAdd, string cMail);
+        ProfessionnalContact(string, string, Sex, string, Address, string);
         virtual ~ProfessionnalContact();
 
         string getCompanyName() { return companyName; }

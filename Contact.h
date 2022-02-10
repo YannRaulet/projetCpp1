@@ -7,10 +7,12 @@ using namespace std;
 
 enum Sex:char {M='M', F='F'};
 
+
 class Contact
 {
     public:
-        Contact(string lastName, string firstName, Sex sex);
+        Contact(string, string, Sex);
+
         virtual ~Contact();
 
         int getId() { return id; }

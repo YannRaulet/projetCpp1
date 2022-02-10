@@ -11,7 +11,7 @@ using namespace std;
 class PrivateContact : public Contact
 {
     public:
-        PrivateContact(string lN, string fN, Sex se, Address cAdd, string cBd);
+        PrivateContact(string, string, Sex, Address, string);
         virtual ~PrivateContact();
 
         Address getContactAddress() { return contactAddress; }

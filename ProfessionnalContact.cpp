@@ -16,8 +16,9 @@ ProfessionnalContact::~ProfessionnalContact()
 }
 
 
-
 void ProfessionnalContact::informations()
 {
 
 }
+
+

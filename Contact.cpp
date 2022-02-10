@@ -8,7 +8,6 @@ Contact::Contact(string lastName, string firstName, Sex sex)
     this->setLastName(lastName);
     this->setFirstName(firstName);
     this->setSex(sex);
-
 }
 
 Contact::~Contact()
@@ -37,4 +36,3 @@ void Contact::setFirstName(string name)
     newName[0] = toupper(newName[0]);
     firstName = newName;
 }
-

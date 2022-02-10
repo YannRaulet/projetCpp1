@@ -2,7 +2,6 @@
 #define ADDRESS_H
 
 #include <string>
-
 using namespace std;
 
 class Address
@@ -11,14 +10,14 @@ class Address
         Address();
         virtual ~Address();
 
-        string Getstreet() { return street; }
-        void Setstreet(string val) { street = val; }
-        string Getcomplement() { return complement; }
-        void Setcomplement(string val) { complement = val; }
-        string GetpostalCode() { return postalCode; }
-        void SetpostalCode(string val) { postalCode = val; }
-        string Getcity() { return city; }
-        void Setcity(string val) { city = val; }
+        string getStreet() { return street; }
+        void setStreet(string val) { street = val; }
+        string getComplement() { return complement; }
+        void setComplement(string val) { complement = val; }
+        string getPostalCode() { return postalCode; }
+        void setPostalCode(string val) { postalCode = val; }
+        string getCity() { return city; }
+        void setCity(string val) { city = val; }
 
     protected:
 
