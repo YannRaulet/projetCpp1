@@ -16,9 +16,14 @@ ProfessionnalContact::~ProfessionnalContact()
 }
 
 
-void ProfessionnalContact::informations()
+void ProfessionnalContact::setCompanyName(string cName)
 {
-
+    string newCompanyName = cName.substr(0,50);
+    for(char &c : newCompanyName) {
+        c = toupper(c);
+    }
+    companyName = newCompanyName;
 }
+
 
 

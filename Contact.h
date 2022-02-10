@@ -24,8 +24,6 @@ class Contact
         void setLastName(string);
         void setFirstName(string);
 
-        virtual void informations() = 0;
-
     private:
         static int counter;
         int id;

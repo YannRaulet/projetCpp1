@@ -15,13 +15,11 @@ class ProfessionnalContact : public Contact
         virtual ~ProfessionnalContact();
 
         string getCompanyName() { return companyName; }
-        void setCompanyName(string val) { companyName = val; }
+        void setCompanyName(string val);
         Address getCompanyAddress() { return companyAddress; }
         void setCompanyAddress(Address val) { companyAddress = val; }
         string getCompanyMail() { return companyMail; }
         void setCompanyMail(string val) { companyMail = val; }
-
-        /* virtual */ void informations() override;
 
     protected:
 

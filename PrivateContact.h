@@ -19,8 +19,6 @@ class PrivateContact : public Contact
         string getBirthdate() { return birthdate; }
         void setBirthdate(string val) { birthdate = val; }
 
-        /* virtual */ void informations() override;
-
     private:
         Address contactAddress;
         string birthdate;
