@@ -1,11 +1,13 @@
 #ifndef CONTACT_H
 #define CONTACT_H
 
+#include <iostream>
+using namespace std;
 
 class Contact
 {
     public:
-        Contact();
+        Contact(string, string, char);
         virtual ~Contact();
 
         int getId() { return id; }
@@ -15,6 +17,8 @@ class Contact
         void setfirstName(string val) { firstName = val; }
         char getSex() { return sex; }
         void setSex(char val) { sex = val; }
+
+        virtual void informations() = 0;
 
     private:
         int id;
