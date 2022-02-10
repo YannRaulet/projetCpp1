@@ -2,27 +2,34 @@
 #define CONTACT_H
 
 #include <iostream>
+
 using namespace std;
+
+enum Sex:char {M='M', F='F'};
+
 
 class Contact
 {
     public:
-        Contact(string, string, char);
+        Contact(string, string, Sex);
+
         virtual ~Contact();
 
         int getId() { return id; }
         string getLastName() { return lastName; }
-        void setLastName(string val) { lastName = val; }
         string getFirstName() { return firstName; }
-        void setfirstName(string val) { firstName = val; }
-        char getSex() { return sex; }
-        void setSex(char val) { sex = val; }
+        Sex getSex() { return sex; }
+        void setSex(Sex vSex) { sex = vSex; }
+
+        void setLastName(string);
+        void setFirstName(string);
 
     private:
+        static int counter;
         int id;
         string lastName;
         string firstName;
-        char sex;
+        Sex sex;
 };
 
 #endif // CONTACT_H

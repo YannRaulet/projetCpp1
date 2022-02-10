@@ -1,6 +1,6 @@
 #include "PrivateContact.h"
 
-PrivateContact::PrivateContact(string lN, string fN, char se, Address cAdd, string cBd)
+PrivateContact::PrivateContact(string lN, string fN, Sex se, Address cAdd, string cBd)
     :Contact(lN, fN, se)
 {
     //ctor

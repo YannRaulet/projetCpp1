@@ -1,6 +1,6 @@
 #include "ProfessionnalContact.h"
 
-ProfessionnalContact::ProfessionnalContact(string lN, string fN, char se, string cN, Address pAdd, string cMail)
+ProfessionnalContact::ProfessionnalContact(string lN, string fN, Sex se, string cN, Address pAdd, string cMail)
     :Contact(lN, fN, se)
 {
     //ctor
