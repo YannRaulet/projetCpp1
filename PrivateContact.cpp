@@ -14,7 +14,3 @@ PrivateContact::~PrivateContact()
     cout << "Destruction du contact privé" <<endl;
 }
 
-void PrivateContact::informations()
-{
-
-}

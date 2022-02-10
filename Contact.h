@@ -18,8 +18,6 @@ class Contact
         char getSex() { return sex; }
         void setSex(char val) { sex = val; }
 
-        virtual void informations() = 0;
-
     private:
         int id;
         string lastName;
