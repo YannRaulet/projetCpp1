@@ -4,10 +4,14 @@
 #include "Address.h"
 #include "Contact.h"
 
+#include <iostream>
+
+using namespace std;
+
 class ProfessionnalContact : public Contact
 {
     public:
-        ProfessionnalContact();
+        ProfessionnalContact(string lN, string fN, Sex se, string cN, Address pAdd, string cMail);
         virtual ~ProfessionnalContact();
 
         string getCompanyName() { return companyName; }

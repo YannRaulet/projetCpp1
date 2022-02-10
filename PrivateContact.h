@@ -4,10 +4,14 @@
 #include "Address.h"
 #include "Contact.h"
 
+#include <iostream>
+
+using namespace std;
+
 class PrivateContact : public Contact
 {
     public:
-        PrivateContact();
+        PrivateContact(string lN, string fN, Sex se, Address cAdd, string cBd);
         virtual ~PrivateContact();
 
         Address getContactAddress() { return contactAddress; }
