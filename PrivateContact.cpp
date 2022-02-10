@@ -1,11 +1,15 @@
 #include "PrivateContact.h"
 
-PrivateContact::PrivateContact()
+PrivateContact::PrivateContact(string lN, string fN, char se, Address cAdd, string cBd)
+    :Contact(lN, fN, se)
 {
     //ctor
+    this->getContactAddress(cAdd);
+    this->setBirthdate(cBd);
 }
 
 PrivateContact::~PrivateContact()
 {
     //dtor
+    cout << "Destruction du contact privé" <<endl;
 }
