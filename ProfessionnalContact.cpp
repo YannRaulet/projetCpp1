@@ -14,3 +14,10 @@ ProfessionnalContact::~ProfessionnalContact()
     //dtor
     cout << "Destruction du contact professionnel" << endl;
 }
+
+
+
+void ProfessionnalContact::informations()
+{
+
+}
