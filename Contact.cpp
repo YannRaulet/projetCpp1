@@ -1,11 +1,11 @@
 #include "Contact.h"
 
-Contact::Contact()
+Contact::Contact(string lN, string fN, char se)
 {
     //ctor
-    this-> setLastName(lN)
-    this->setfirstName(fN)
-    this->setSex(se)
+    this-> setLastName(lN);
+    this->setfirstName(fN);
+    this->setSex(se);
 
 }
 
@@ -15,3 +15,4 @@ Contact::~Contact()
     cout << "Destruction du contact" << endl;
 
 }
+

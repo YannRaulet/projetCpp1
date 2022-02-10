@@ -7,7 +7,7 @@
 class ProfessionnalContact : public Contact
 {
     public:
-        ProfessionnalContact();
+        ProfessionnalContact(string, string, char, string, Address, string);
         virtual ~ProfessionnalContact();
 
         string getCompanyName() { return companyName; }

@@ -7,7 +7,7 @@
 class PrivateContact : public Contact
 {
     public:
-        PrivateContact();
+        PrivateContact(string, string, char, Address, string);
         virtual ~PrivateContact();
 
         Address getContactAddress() { return contactAddress; }

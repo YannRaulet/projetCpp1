@@ -1,12 +1,12 @@
 #include "ProfessionnalContact.h"
 
-ProfessionnalContact::ProfessionnalContact(string lN, string fN, char se, string cN, Adress pAdd, string cMail)
+ProfessionnalContact::ProfessionnalContact(string lN, string fN, char se, string cN, Address pAdd, string cMail)
     :Contact(lN, fN, se)
 {
     //ctor
-    this->SetcompanyName(cN);
-    this->SetcompanyAddress(pAdd);
-    this->SetcompanyMail(cMail)
+    this->setCompanyName(cN);
+    this->setCompanyAddress(pAdd);
+    this->setCompanyMail(cMail);
 }
 
 ProfessionnalContact::~ProfessionnalContact()
@@ -16,8 +16,9 @@ ProfessionnalContact::~ProfessionnalContact()
 }
 
 
-
 void ProfessionnalContact::informations()
 {
 
 }
+
+
