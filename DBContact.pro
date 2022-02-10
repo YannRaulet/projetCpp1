@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,6 +13,7 @@ SOURCES += \
     Contact.cpp \
     PrivateContact.cpp \
     ProfessionnalContact.cpp \
+    ajoutcontactdialog.cpp \
     main.cpp \
     mainwindow.cpp
 
@@ -21,9 +22,11 @@ HEADERS += \
     Contact.h \
     PrivateContact.h \
     ProfessionnalContact.h \
+    ajoutcontactdialog.h \
     mainwindow.h
 
 FORMS += \
+    ajoutcontactdialog.ui \
     mainwindow.ui
 
 # Default rules for deployment.
