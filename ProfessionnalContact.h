@@ -4,29 +4,28 @@
 #include "Address.h"
 #include "Contact.h"
 
-#include <iostream>
+#include <QString>
 
-using namespace std;
 
 class ProfessionnalContact : public Contact
 {
     public:
-        ProfessionnalContact(string, string, Sex, string, Address, string);
+        ProfessionnalContact(QString, QString, Sex, QString, Address, QString);
         virtual ~ProfessionnalContact();
 
-        string getCompanyName() { return companyName; }
-        void setCompanyName(string val);
+        QString getCompanyName() { return companyName; }
+        void setCompanyName(QString val);
         Address getCompanyAddress() { return companyAddress; }
         void setCompanyAddress(Address val) { companyAddress = val; }
-        string getCompanyMail() { return companyMail; }
-        void setCompanyMail(string val) { companyMail = val; }
+        QString getCompanyMail() { return companyMail; }
+        void setCompanyMail(QString val) { companyMail = val; }
 
     protected:
 
     private:
-        string companyName;
+        QString companyName;
         Address companyAddress;
-        string companyMail;
+        QString companyMail;
 };
 
 #endif // PROFESSIONNALCONTACT_H

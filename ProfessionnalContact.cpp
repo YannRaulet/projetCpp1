@@ -1,6 +1,7 @@
 #include "ProfessionnalContact.h"
+#include <QDebug>
 
-ProfessionnalContact::ProfessionnalContact(string lN, string fN, Sex se, string cN, Address pAdd, string cMail)
+ProfessionnalContact::ProfessionnalContact(QString lN, QString fN, Sex se, QString cN, Address pAdd, QString cMail)
     :Contact(lN, fN, se)
 {
     //ctor
@@ -12,15 +13,16 @@ ProfessionnalContact::ProfessionnalContact(string lN, string fN, Sex se, string 
 ProfessionnalContact::~ProfessionnalContact()
 {
     //dtor
-    cout << "Destruction du contact professionnel" << endl;
+    qDebug() << "Destruction du contact professionnel" << endl;
 }
 
 
-void ProfessionnalContact::setCompanyName(string cName)
+void ProfessionnalContact::setCompanyName(QString cName)
 {
-    string newCompanyName = cName.substr(0,50);
-    for(char &c : newCompanyName) {
-        c = toupper(c);
+    QString newCompanyName = cName;
+    newCompanyName.truncate(50);
+    for(QChar &c : newCompanyName) {
+        c = c.toUpper();
     }
     companyName = newCompanyName;
 }

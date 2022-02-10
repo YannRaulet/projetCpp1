@@ -1,31 +1,29 @@
 #ifndef ADDRESS_H
 #define ADDRESS_H
 
-#include <string>
-using namespace std;
+#include <QString>
 
 class Address
 {
-    public:
-        Address();
-        virtual ~Address();
+private:
+    QString street;
+    QString complement;
+    QString postalCode;
+    QString city;
 
-        string getStreet() { return street; }
-        void setStreet(string val) { street = val; }
-        string getComplement() { return complement; }
-        void setComplement(string val) { complement = val; }
-        string getPostalCode() { return postalCode; }
-        void setPostalCode(string val) { postalCode = val; }
-        string getCity() { return city; }
-        void setCity(string val) { city = val; }
+public:
+    Address();
+    virtual ~Address();
 
-    protected:
+    QString getStreet() { return street; }
+    void setStreet(QString val) { street = val; }
+    QString getComplement() { return complement; }
+    void setComplement(QString val) { complement = val; }
+    QString getPostalCode() { return postalCode; }
+    void setPostalCode(QString val) { postalCode = val; /*TODO:  A check en QT*/ }
+    QString getCity() { return city; }
+    void setCity(QString val) { city = val; }
 
-    private:
-        string street;
-        string complement;
-        string postalCode;
-        string city;
 };
 
 #endif // ADDRESS_H
