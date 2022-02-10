@@ -1,6 +1,0 @@
-#ifndef CONTACT_H_INCLUDED
-#define CONTACT_H_INCLUDED
-
-
-
-#endif // CONTACT_H_INCLUDED
