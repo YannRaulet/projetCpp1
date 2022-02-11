@@ -1,6 +1,8 @@
 #ifndef AJOUTCONTACTDIALOG_H
 #define AJOUTCONTACTDIALOG_H
 
+#include "Contact.h"
+
 #include <QDialog>
 #include <QRegExpValidator>
 
@@ -21,11 +23,23 @@ private slots:
 
     void on_professionnalRButton_clicked();
 
-    void on_lastnameInput_textChanged(const QString &arg1);
+    void on_lastnameInput_textChanged(const QString &);
 
-    void on_firstnameInput_textChanged(const QString &arg1);
+    void on_firstnameInput_textChanged(const QString &);
 
-    void on_companyInput_textChanged(const QString &arg1);
+    void on_mailInput_textChanged();
+
+    void on_addressInput_textChanged();
+
+    void on_postalcodeInput_textChanged();
+
+    void on_cityInput_textChanged();
+
+    void on_companyInput_textChanged();
+
+
+    void checkAddButtonActivation();
+    void on_addButton_clicked();
 
 private:
     Ui::AjoutContactDialog *ui;
@@ -40,8 +54,7 @@ private:
     bool isAddressValid();
     bool isPostalCodeValid();
     bool isCityValid();
-
-
+    bool addContactToDb(Contact *c);
 };
 
 #endif // AJOUTCONTACTDIALOG_H

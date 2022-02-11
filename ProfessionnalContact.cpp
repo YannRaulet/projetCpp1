@@ -1,13 +1,13 @@
 #include "ProfessionnalContact.h"
 #include <QDebug>
 
-ProfessionnalContact::ProfessionnalContact(QString lN, QString fN, Sex se, QString cN, Address pAdd, QString cMail)
-    :Contact(lN, fN, se)
+ProfessionnalContact::ProfessionnalContact(QString lastName, QString firstName, Sex sex, Address address, QString companyName, QString companyMail)
+    :Contact(lastName, firstName, sex)
 {
     //ctor
-    this->setCompanyName(cN);
-    this->setCompanyAddress(pAdd);
-    this->setCompanyMail(cMail);
+    this->setCompanyName(companyName);
+    this->setCompanyAddress(address);
+    this->setCompanyMail(companyMail);
 }
 
 ProfessionnalContact::~ProfessionnalContact()

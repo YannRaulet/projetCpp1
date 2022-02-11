@@ -12,17 +12,19 @@ private:
     QString city;
 
 public:
-    Address();
+    Address(QString street, QString complement, QString postalCode, QString city);
+    Address() = default;
     virtual ~Address();
 
-    QString getStreet() { return street; }
+    QString getStreet() const { return street; }
     void setStreet(QString val) { street = val; }
-    QString getComplement() { return complement; }
+    QString getComplement() const { return complement; }
     void setComplement(QString val) { complement = val; }
-    QString getPostalCode() { return postalCode; }
-    void setPostalCode(QString val) { postalCode = val; /*TODO:  A check en QT*/ }
-    QString getCity() { return city; }
+    QString getPostalCode() const { return postalCode; }
+    void setPostalCode(QString val) { postalCode = val; }
+    QString getCity() const { return city; }
     void setCity(QString val) { city = val; }
+
 
 };
 

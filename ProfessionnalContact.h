@@ -10,7 +10,7 @@
 class ProfessionnalContact : public Contact
 {
     public:
-        ProfessionnalContact(QString, QString, Sex, QString, Address, QString);
+        ProfessionnalContact(QString lastName, QString firstName, Sex sex, Address address, QString companyName, QString companyMail);
         virtual ~ProfessionnalContact();
 
         QString getCompanyName() { return companyName; }

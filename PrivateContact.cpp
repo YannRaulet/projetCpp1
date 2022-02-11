@@ -1,12 +1,12 @@
 #include "PrivateContact.h"
 #include <QDebug>
 
-PrivateContact::PrivateContact(QString lN, QString fN, Sex se, Address cAdd, QString cBd)
-    :Contact(lN, fN, se)
+PrivateContact::PrivateContact(QString lastName, QString firstName, Sex sex, Address address, QDate birthdate)
+    :Contact(lastName, firstName, sex)
 {
     //ctor
-    this->setContactAddress(cAdd);
-    this->setBirthdate(cBd);
+    this->setContactAddress(address);
+    this->setBirthdate(birthdate);
 }
 
 PrivateContact::~PrivateContact()
