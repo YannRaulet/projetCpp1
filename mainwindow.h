@@ -21,9 +21,12 @@ private slots:
 
     void on_pbPro_clicked();
 
-    void on_searchButton_clicked();
+    void on_txtName_textEdited(const QString &arg1);
 
     void on_addContactButton_clicked();
+
+    void on_actionQuitter_triggered();
+
 
 private:
     Ui::MainWindow *ui;    
