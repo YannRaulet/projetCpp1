@@ -6,6 +6,7 @@
 #include <QSqlQuery>
 #include <QSqlTableModel>
 #include <QDebug>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,7 +21,6 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
-
 
 void MainWindow::on_pbPrivate_clicked()
 {
@@ -47,6 +47,37 @@ void MainWindow::on_pbPro_clicked()
 }
 
 void MainWindow::on_searchButton_clicked()
-{
+{ 
+    QSqlTableModel *model = new QSqlTableModel();
 
+    QString text = ui->txtName->text();
+    QString errors="";
+
+    if (text.isEmpty())
+    {
+        errors.append(" Veuillez entrer un nom \n");
+        ui->labelMessage->setStyleSheet("color: red");
+    }
+
+    if(errors.isEmpty())
+    {
+        QRegExp expr("[a-z A-Z]*");
+
+        if(expr.exactMatch(text)==false)
+        {
+            errors.append(" Merci de ne rentrer que des lettres \n");
+            ui->labelMessage->setStyleSheet("color: red");
+        }
+        else
+        {
+            model->setTable("contacts");
+            model->setFilter("Nom like '" + ui->txtName->text() + "%'") ;
+            model->select();
+            ui->tableView->setModel(model);
+        }
+    }
+    if(!errors.isEmpty())
+    {
+        ui->labelMessage->setText(errors);
+    }
 }
