@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>536</width>
-    <height>429</height>
+    <width>640</width>
+    <height>482</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,8 +18,8 @@
     <rect>
      <x>30</x>
      <y>80</y>
-     <width>471</width>
-     <height>301</height>
+     <width>511</width>
+     <height>331</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -36,7 +36,7 @@
      <rect>
       <x>32</x>
       <y>62</y>
-      <width>31</width>
+      <width>51</width>
       <height>21</height>
      </rect>
     </property>
@@ -50,9 +50,9 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>251</x>
+      <x>260</x>
       <y>21</y>
-      <width>43</width>
+      <width>71</width>
       <height>21</height>
      </rect>
     </property>
@@ -66,7 +66,7 @@
    <widget class="QLineEdit" name="firstnameInput">
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>350</x>
       <y>20</y>
       <width>111</width>
       <height>22</height>
@@ -79,9 +79,9 @@
    <widget class="QComboBox" name="sexCBox">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>140</x>
       <y>60</y>
-      <width>64</width>
+      <width>91</width>
       <height>22</height>
      </rect>
     </property>
@@ -105,7 +105,7 @@
    <widget class="QLabel" name="birthdateLabel">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>260</x>
       <y>50</y>
       <width>81</width>
       <height>31</height>
@@ -124,7 +124,7 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>330</x>
+      <x>350</x>
       <y>60</y>
       <width>110</width>
       <height>22</height>
@@ -167,7 +167,7 @@
    <widget class="QLineEdit" name="mailInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>140</x>
       <y>140</y>
       <width>331</width>
       <height>21</height>
@@ -182,7 +182,7 @@
      <rect>
       <x>30</x>
       <y>90</y>
-      <width>71</width>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -196,7 +196,7 @@
    <widget class="QLineEdit" name="companyInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>140</x>
       <y>100</y>
       <width>331</width>
       <height>21</height>
@@ -209,10 +209,10 @@
    <widget class="QFrame" name="frameAddress">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>10</x>
       <y>170</y>
-      <width>471</width>
-      <height>131</height>
+      <width>481</width>
+      <height>141</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -224,9 +224,9 @@
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>0</y>
-       <width>51</width>
+       <x>20</x>
+       <y>10</y>
+       <width>71</width>
        <height>21</height>
       </rect>
      </property>
@@ -240,8 +240,8 @@
     <widget class="QLineEdit" name="complementInput">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>40</y>
+       <x>130</x>
+       <y>50</y>
        <width>113</width>
        <height>21</height>
       </rect>
@@ -253,9 +253,9 @@
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>40</y>
-       <width>71</width>
+       <x>260</x>
+       <y>50</y>
+       <width>91</width>
        <height>21</height>
       </rect>
      </property>
@@ -269,8 +269,8 @@
     <widget class="QLabel" name="label_7">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>80</y>
+       <x>20</x>
+       <y>90</y>
        <width>61</width>
        <height>21</height>
       </rect>
@@ -285,9 +285,9 @@
     <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>30</x>
-       <y>40</y>
-       <width>71</width>
+       <x>20</x>
+       <y>50</y>
+       <width>101</width>
        <height>21</height>
       </rect>
      </property>
@@ -301,8 +301,8 @@
     <widget class="QLineEdit" name="postalcodeInput">
      <property name="geometry">
       <rect>
-       <x>330</x>
-       <y>40</y>
+       <x>350</x>
+       <y>50</y>
        <width>111</width>
        <height>21</height>
       </rect>
@@ -317,8 +317,8 @@
     <widget class="QLineEdit" name="cityInput">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>80</y>
+       <x>130</x>
+       <y>90</y>
        <width>331</width>
        <height>21</height>
       </rect>
@@ -330,8 +330,8 @@
     <widget class="QLineEdit" name="addressInput">
      <property name="geometry">
       <rect>
-       <x>110</x>
-       <y>0</y>
+       <x>130</x>
+       <y>10</y>
        <width>331</width>
        <height>21</height>
       </rect>
@@ -344,7 +344,7 @@
    <widget class="QLineEdit" name="lastnameInput">
     <property name="geometry">
      <rect>
-      <x>110</x>
+      <x>140</x>
       <y>20</y>
       <width>111</width>
       <height>22</height>
@@ -359,7 +359,7 @@
      <rect>
       <x>31</x>
       <y>21</y>
-      <width>28</width>
+      <width>41</width>
       <height>21</height>
      </rect>
     </property>
@@ -390,7 +390,7 @@
      <x>90</x>
      <y>40</y>
      <width>351</width>
-     <height>21</height>
+     <height>25</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
@@ -420,9 +420,9 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>400</y>
+     <y>420</y>
      <width>191</width>
-     <height>23</height>
+     <height>27</height>
     </rect>
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">

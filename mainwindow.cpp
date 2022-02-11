@@ -23,6 +23,8 @@ MainWindow::MainWindow(QWidget *parent)
     model->setTable("contacts");
     model->select();
     ui->tableView->setModel(model);
+    ui->labelMessage->hide();
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
 }
 
 MainWindow::~MainWindow()
@@ -34,9 +36,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::setTableFilters(bool privFilter, bool proFilter) {
     QString filter = "";
-    if(privFilter != proFilter) { //Les 2 sont à true ou à false
+    if(privFilter != proFilter) { //L'un est a true et l'autre a false
         QString isNot = proFilter ? "is not " : "is ";
         filter = "entreprise " + isNot + "null";
+    }
+    if(QRegExp("[a-z A-Z]*").exactMatch(ui->txtName->text()))
+    {
+        filter += filter.isEmpty() ? "" : " and ";
+        filter += "Nom like '" + ui->txtName->text() + "%'";
     }
     QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
     if(model != nullptr) {
@@ -61,40 +68,17 @@ void MainWindow::on_pbPro_stateChanged(int state)
     setTableFilters(ui->pbPrivate->checkState() == Qt::Checked, state == Qt::Checked);
 }
 
-void MainWindow::on_searchButton_clicked()
+void MainWindow::on_txtName_textEdited(const QString &txtName)
 {
 
-    QString text = ui->txtName->text();
-    QString errors="";
-
-    if (text.isEmpty())
+    if(QRegExp("[a-z A-Z]*").exactMatch(txtName))
     {
-        errors.append(" Veuillez entrer un nom \n");
-        ui->labelMessage->setStyleSheet("color: red");
+        ui->labelMessage->hide();
+        setTableFilters(ui->pbPrivate->checkState() == Qt::Checked, ui->pbPro->checkState() == Qt::Checked);
     }
-
-    if(errors.isEmpty())
+    else
     {
-        QRegExp expr("[a-z A-Z]*");
-
-        if(expr.exactMatch(text)==false)
-        {
-            errors.append(" Merci de ne rentrer que des lettres \n");
-            ui->labelMessage->setStyleSheet("color: red");
-        }
-        else
-        {
-
-            QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
-            if(model != nullptr) {
-                model->setFilter("Nom like '" + ui->txtName->text() + "%'");
-                model->select();
-            }
-        }
-    }
-    if(!errors.isEmpty())
-    {
-        ui->labelMessage->setText(errors);
+        ui->labelMessage->show();
     }
 }
 
@@ -108,5 +92,7 @@ void MainWindow::on_addContactButton_clicked()
     }
 }
 
-
-
+void MainWindow::on_actionQuitter_triggered()
+{
+    this->close();
+}
