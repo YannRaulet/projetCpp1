@@ -32,24 +32,33 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pbPrivate_clicked()
-{
+void MainWindow::setTableFilters(bool privFilter, bool proFilter) {
+    QString filter = "";
+    if(privFilter != proFilter) { //Les 2 sont à true ou à false
+        QString isNot = proFilter ? "is not " : "is ";
+        filter = "entreprise " + isNot + "null";
+    }
     QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
     if(model != nullptr) {
-        model->setFilter("entreprise is null");
+        model->setFilter(filter);
         model->select();
     }
-    ui->tableView->hideColumn(4);
+    if(privFilter && !proFilter) {
+        ui->tableView->hideColumn(4);
+    }
+    else {
+        ui->tableView->showColumn(4);
+    }
 }
 
-void MainWindow::on_pbPro_clicked()
+void MainWindow::on_pbPrivate_stateChanged(int state)
 {
-    QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
-    if(model != nullptr) {
-        model->setFilter("entreprise is not null");
-        model->select();
-    }
-    ui->tableView->showColumn(4);
+    setTableFilters(state == Qt::Checked, ui->pbPro->checkState() == Qt::Checked);
+}
+
+void MainWindow::on_pbPro_stateChanged(int state)
+{
+    setTableFilters(ui->pbPrivate->checkState() == Qt::Checked, state == Qt::Checked);
 }
 
 void MainWindow::on_searchButton_clicked()
@@ -98,4 +107,6 @@ void MainWindow::on_addContactButton_clicked()
         model->select();
     }
 }
+
+
 

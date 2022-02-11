@@ -17,15 +17,16 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pbPrivate_clicked();
-
-    void on_pbPro_clicked();
-
     void on_searchButton_clicked();
 
     void on_addContactButton_clicked();
 
+    void on_pbPrivate_stateChanged(int state);
+
+    void on_pbPro_stateChanged(int state);
+
 private:
-    Ui::MainWindow *ui;    
+    Ui::MainWindow *ui;
+    void setTableFilters(bool privFilter, bool proFilter);
 };
 #endif // MAINWINDOW_H

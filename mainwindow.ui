@@ -11,42 +11,16 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>BDD de contacts</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pbPrivate">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>40</y>
-      <width>121</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>private contacts</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pbPro">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>40</y>
-      <width>181</width>
-      <height>25</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>professionnal contacts</string>
-    </property>
-   </widget>
    <widget class="QTableView" name="tableView">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>110</y>
+      <y>10</y>
       <width>591</width>
-      <height>281</height>
+      <height>381</height>
      </rect>
     </property>
    </widget>
@@ -102,15 +76,54 @@
    <widget class="QPushButton" name="addContactButton">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>40</y>
-      <width>131</width>
+      <x>630</x>
+      <y>240</y>
+      <width>161</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
      <string>Ajouter un contact</string>
     </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>110</y>
+      <width>161</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Filtres</string>
+    </property>
+    <widget class="QCheckBox" name="pbPrivate">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>121</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Contacts privés</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="pbPro">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>50</y>
+       <width>151</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Contacts professionnels</string>
+     </property>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

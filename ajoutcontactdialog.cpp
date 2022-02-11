@@ -134,7 +134,6 @@ void AjoutContactDialog::on_privateRButton_clicked()
 
 void AjoutContactDialog::on_professionnalRButton_clicked()
 {
-    //QLineEdit
     ui->frameAddress->move(ui->frameAddress->x(), ui->lastnameInput->y() + verticalLength * 4);
     ui->mailLabel->show();
     ui->mailInput->show();
