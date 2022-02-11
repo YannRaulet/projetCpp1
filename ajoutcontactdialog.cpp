@@ -75,9 +75,9 @@ void AjoutContactDialog::on_addButton_clicked()
     }
     bool ok = addContactToDb(toAdd);
     delete toAdd;
-    QMessageBox msg(QMessageBox::Information, "Requete effectuée", "La requete a été effectuée", QMessageBox::Ok, this);
-    msg.exec();
     if(ok) {
+        QMessageBox msg(QMessageBox::Information, "Contact ajouté", "Le contact a bien été ajouté dans la base de données", QMessageBox::Ok, this);
+        msg.exec();
         this->close();
     }
 
