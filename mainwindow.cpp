@@ -23,9 +23,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pbPrivate_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("/home/yann/Documents/formationCPlusPlus/projetCPP/projetCPP/dbContacts.db");
     db.setDatabaseName("../projetCPP/dbContacts.db");
-
 
     QSqlTableModel *model = new QSqlTableModel();
 
@@ -35,15 +33,12 @@ void MainWindow::on_pbPrivate_clicked()
 
     ui->tableView->setModel(model);
     ui->tableView->hideColumn(4);
-    //db.close();
 }
 
 void MainWindow::on_pbPro_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    //db.setDatabaseName("/home/yann/Documents/formationCPlusPlus/projetCPP/projetCPP/dbContacts.db");
     db.setDatabaseName("../projetCPP/dbContacts.db");
-
 
     QSqlTableModel *model = new QSqlTableModel();
 
@@ -53,6 +48,4 @@ void MainWindow::on_pbPro_clicked()
 
     ui->tableView->setModel(model);
     ui->tableView->showColumn(4);
-
-    //db.close();
 }
