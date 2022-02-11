@@ -21,10 +21,16 @@ MainWindow::MainWindow(QWidget *parent)
     db.open();
     QSqlTableModel *model = new QSqlTableModel();
     model->setTable("contacts");
+    model->setHeaderData(0, Qt::Horizontal, "Id", Qt::DisplayRole);
+    model->setHeaderData(5, Qt::Horizontal, "Rue", Qt::DisplayRole);
+    model->setHeaderData(7, Qt::Horizontal, "Code Postal", Qt::DisplayRole);
+    model->setHeaderData(9, Qt::Horizontal, "Adresse mail", Qt::DisplayRole);
+    model->setHeaderData(10, Qt::Horizontal, "Date de naissance", Qt::DisplayRole);
     model->select();
     ui->tableView->setModel(model);
     ui->labelMessage->hide();
     ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->tableView->verticalHeader()->hide();
 }
 
 MainWindow::~MainWindow()
@@ -52,10 +58,20 @@ void MainWindow::setTableFilters(bool privFilter, bool proFilter) {
     }
     if(privFilter && !proFilter) {
         ui->tableView->hideColumn(4);
+        ui->tableView->hideColumn(9);
+        ui->tableView->showColumn(10);
+    }
+    else if (!privFilter && proFilter){
+        ui->tableView->showColumn(4);
+        ui->tableView->showColumn(9);
+        ui->tableView->hideColumn(10);
     }
     else {
         ui->tableView->showColumn(4);
+        ui->tableView->showColumn(9);
+        ui->tableView->showColumn(10);
     }
+
 }
 
 void MainWindow::on_pbPrivate_stateChanged(int state)
