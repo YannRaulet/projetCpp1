@@ -12,6 +12,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
+    db.setDatabaseName("../projetCPP/dbContacts.db");
 }
 
 MainWindow::~MainWindow()
@@ -22,9 +24,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbPrivate_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("../projetCPP/dbContacts.db");
-
     QSqlTableModel *model = new QSqlTableModel();
 
     model->setTable("contacts");
@@ -37,9 +36,6 @@ void MainWindow::on_pbPrivate_clicked()
 
 void MainWindow::on_pbPro_clicked()
 {
-    QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("../projetCPP/dbContacts.db");
-
     QSqlTableModel *model = new QSqlTableModel();
 
     model->setTable("contacts");
@@ -48,4 +44,9 @@ void MainWindow::on_pbPro_clicked()
 
     ui->tableView->setModel(model);
     ui->tableView->showColumn(4);
+}
+
+void MainWindow::on_searchButton_clicked()
+{
+
 }

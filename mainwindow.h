@@ -21,7 +21,9 @@ private slots:
 
     void on_pbPro_clicked();
 
+    void on_searchButton_clicked();
+
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow *ui;    
 };
 #endif // MAINWINDOW_H
