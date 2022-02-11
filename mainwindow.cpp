@@ -23,6 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     model->setTable("contacts");
     model->select();
     ui->tableView->setModel(model);
+    ui->labelMessage->hide();
 }
 
 MainWindow::~MainWindow()
@@ -52,40 +53,22 @@ void MainWindow::on_pbPro_clicked()
     ui->tableView->showColumn(4);
 }
 
-void MainWindow::on_searchButton_clicked()
+void MainWindow::on_txtName_textEdited(const QString &txtName)
 {
+    QRegExp expr("[a-z A-Z]*");
 
-    QString text = ui->txtName->text();
-    QString errors="";
-
-    if (text.isEmpty())
+    if(expr.exactMatch(txtName)==false)
     {
-        errors.append(" Veuillez entrer un nom \n");
-        ui->labelMessage->setStyleSheet("color: red");
+        ui->labelMessage->show();
     }
-
-    if(errors.isEmpty())
+    else
     {
-        QRegExp expr("[a-z A-Z]*");
-
-        if(expr.exactMatch(text)==false)
-        {
-            errors.append(" Merci de ne rentrer que des lettres \n");
-            ui->labelMessage->setStyleSheet("color: red");
+        ui->labelMessage->hide();
+        QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
+        if(model != nullptr) {
+            model->setFilter("Nom like '" + ui->txtName->text() + "%'");
+            model->select();
         }
-        else
-        {
-
-            QSqlTableModel *model = dynamic_cast<QSqlTableModel *>(ui->tableView->model());
-            if(model != nullptr) {
-                model->setFilter("Nom like '" + ui->txtName->text() + "%'");
-                model->select();
-            }
-        }
-    }
-    if(!errors.isEmpty())
-    {
-        ui->labelMessage->setText(errors);
     }
 }
 
@@ -99,3 +82,8 @@ void MainWindow::on_addContactButton_clicked()
     }
 }
 
+
+void MainWindow::on_actionQuitter_triggered()
+{
+    this->close();
+}
