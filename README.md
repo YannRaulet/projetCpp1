@@ -6,9 +6,9 @@
 
 Realization in pairs of a graphic application offering the user the
 possibility of :
-- List private and/or professional contacts
-- Search by Name
-- Add a contact of any type
+- List private and/or professional contacts.
+- Search by Name.
+- Add a contact of any type.
 
 ---------------------------------------------------------
 
